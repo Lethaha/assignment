@@ -1,0 +1,78 @@
+/*
+ * cmdline_parser.h
+ *
+ *  Created on: 22 Feb 2012
+ *      Author: simon
+ */
+
+#ifndef CMDLINE_PARSER_H_
+#define CMDLINE_PARSER_H_
+
+#include <iostream>
+#include <list>
+#include <string>
+
+#include <boost/program_options.hpp>
+
+//---------------------------------------------------------------------------//
+class cmdline_parser
+{
+public:
+    //-----------------------------------------------------------------------//
+	// Constructor
+	cmdline_parser(void);
+
+
+	// Member function that parses command line options
+	bool process_cmdline(int argc, char * argv[]);
+	// Return the input filename
+	std::string getInFile(void) const;
+	// Return the output filename
+	std::string getOutFile(void) const;
+
+	// Returns the user supplied args
+	int32_t getXORK(void) const;
+	std::string getVignereK(void) const;
+	std::string getCaesarK(void) const;
+
+	// Checks if user supplied the proper args
+	bool isEncode(void);
+	bool isDecode(void);
+	bool isXOR(void);
+	bool isVignere(void);
+	bool isCaesar(void);
+	bool toGroup(void);
+	bool toPack(void);
+
+	
+
+
+	void print_errors(std::ostream & out) const;
+
+	bool should_print_help(void) const;
+	// Output help to the specified output stream
+	void print_help(std::ostream & out) const;
+
+private:
+    //-----------------------------------------------------------------------//
+	// Member variables
+	boost::program_options::variables_map vm;
+	boost::program_options::options_description od;
+	std::list<std::string> errors;
+
+    //-----------------------------------------------------------------------//
+	// Static string variables
+	static const std::string INPUTFILE;
+	static const std::string MODE;
+	static const std::string INITIALISE;
+	static const std::string OUTPUTFILE;
+	static const std::string ENCODING;
+	static const std::string DECODING;
+	static const std::string XOR;
+	static const std::string VIGNERE;
+	static const std::string CAESAR;
+	static const std::string GROUP;
+	static const std::string PACKING;
+};
+
+#endif /* CMDLINE_PARSER_H_ */

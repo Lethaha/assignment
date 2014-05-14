@@ -1,0 +1,26 @@
+Author: Lethaha Thamae
+Student No: THMTEB001
+
+Date: 13 May 2014
+
+Assignment : Template Specialisation and the Standard Template Library
+
+Description:
+The The aim of this tutorial is to create a templated cryptographic class that can encrypt
+plaintext messages and decrypt ciphertext. While the encryption algorithms themselves
+are only toy examples, their implementation is achieved through the use of the
+following C++ features:
+	Templates
+	Traits and Policies
+	Template Specialisation
+	STL Containers and Algorithm
+
+
+Instruction:
+1. Type make to compile
+2. Run the 'exec' executable using command './exec' followed by the definition of the operation you would like to perform.
+   e.g ./exec -i ENCRYPT -o OUTPUT -e -x 121 
+This program is meant to be used on Uppercase characters and spaces. 
+
+List of files: cmdline_parser.cpp cmdline_parser.h CryptoMachine.cpp Types.h Driver.h Crypt_policy.h Crypt_traits.h
+

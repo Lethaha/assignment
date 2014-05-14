@@ -1,0 +1,35 @@
+Author: Lethaha Thamae
+Student No: THMTEB001
+
+Date: 13 May 2014
+
+Assignment : Template Specialisation and the Standard Template Library
+
+Description:
+
+The aim of this tutorial was to create a templated cryptographic class that can encrypt plaintext messages and decrypt ciphertext.  Implementation had to be achieved through the use of the following C++ features:
+	• Templates
+	• Traits and Policies
+	• Template Specialisation
+	• STL Containers and Algorithms
+
+There is one source file in the project, Crypto.cpp, which is the driver class. There 4 header files, crypt.h, Type.h, Crypt_policy.h and Crypt_traits.h. There are definitions in each header file explaining what each header file does. The Types.h header defines the types used by the other header files. To avoid code duplication, not all the types in the Type.h header were left as dummy classes. The types that have definitions are used as functors, and they are called by many specializations the Crypt_policy.h header. The Crypt_policy.h is used to perform encoding and decoding, by calling the methods defined in the Type.h header by the different types. The calling depends on the specialization required by the crypt.h class. The Crypt_traits.h header is used to return information about the current encoding or decoding operation happening. 
+
+
+Instructions(and points):
+1. Have all the files listed below in one folder
+2. From terminal, navigate to the folder containing these files and compile the project using the Makefile by typing in 'make'.
+3. Run the crpyt executable using command './crpyt' followed by the definition of the operation you would like to perform. Make sure the file you specify as the input file exists, otherwise the program will throw an error.  
+This program is meant to be used on Uppercase characters and spaces. The program does its best to perform conversions to uppercase where possible, but to avoid errors and unpredictable responses, please ensure that your input file contains uppercase characters and spaces only. 
+
+
+
+List of files:
+	     - cmdline_parser.cpp
+	     - cmdline_parser.h
+	     - Crypto.cpp
+             - Types.h
+             - crypt.h
+             - Crypt_policy.h
+             - Crypt_traits.h
+
